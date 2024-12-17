@@ -16,9 +16,11 @@
     <pre>
     <?php
         $paginador = new Paginador();
-        $pagina = $_GET['pagina'];
 
-        print_r($paginador->paginar("SELECT * FROM `usuarios`;", $pagina));
+        // Verificar si $_GET['pagina'] está definido y es un número
+        $pagina = isset($_GET['pagina']) && is_numeric($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+
+        print_r($paginador->paginar("SELECT * FROM `usuarios`", $pagina));
         // print_r($paginador->getPaginacion());
 
         $params = $paginador->getPaginacion();
