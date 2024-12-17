@@ -24,8 +24,6 @@
             for ($i = $max_id + 1; $i <= $limite; $i++) {
                 mysql_query("INSERT INTO `usuarios` VALUES(null, 'nombres-$i')", $conexion);
             }
-        } else {
-            echo "No se pueden insertar registros, el ID máximo es 55 o mayor.";
         }
     }
 ?>
